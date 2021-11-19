@@ -1,7 +1,7 @@
 # Makefile for genomikon demo programs
 
-LIB = -L../genomikon -lgenomikon -lm
-INC = -I../genomikon
+LIB = -L../../genomikon -lgenomikon -lm
+INC = -I../../genomikon
 CC = gcc
 CFLAGS = -O2 -Wall -Werror
 
@@ -11,8 +11,8 @@ OBJ1 = hello.o
 APP2 = train
 OBJ2 = train.o
 
-APP3 = sw
-OBJ3 = sw.o
+APP3 = sw_v2
+OBJ3 = sw_v2.o
 
 APP4 = scrap
 OBJ4 = scrap.o
@@ -44,6 +44,6 @@ clean:
 	rm -f *.o $(APP1) $(APP2) $(APP3) $(APP4) $(APP5)
 
 test: $(APP3)
-	./sw a.fa b.fa
+	./sw_v2 a.fa b.fa
 %.o: %.c
 	$(CC) $(CFLAGS) $(INC) -c -o $@ $<
