@@ -22,7 +22,7 @@ default:
 	make $(APP1)
 	make $(APP2)
 	make $(APP3)
-	make $(APP4)
+#	make $(APP4)
 #	make $(APP5)
 
 $(APP1): $(OBJ1)

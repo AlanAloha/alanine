@@ -179,6 +179,9 @@ void align(dpmatrix mat, int M, int N, int G) {
 						y--;
 					}	
 				} 
+				
+				printf("%s\n", s1_aligned);
+				printf("%s\n", s2_aligned);
 				//Print alignments
 				for (int k = counter-1; k >= 0; k--) printf("%c ", s1_aligned[k]);
 				printf("\n");

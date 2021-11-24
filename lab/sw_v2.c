@@ -29,6 +29,7 @@ struct DPMatrix {
 	int    len1;
 	int    len2;
 	int	   max;
+	int    num_max;
 	char  *seq1;
 	char  *seq2;
 	int  **score;
@@ -73,6 +74,18 @@ void printm(const dpmatrix mat) {
 		printf("\n");
 	}
 }
+
+char *reverse_string(char *str) {
+	int len = strlen(str);
+	char *rev = malloc(len);
+	
+	for(int i = 0; i < len; i++) {
+		rev[i] = str[len-i-1];
+	}
+	
+	return rev;
+}
+
 
 dpmatrix new_dpmatrix(const gkn_fasta ffa, const gkn_fasta ffb, int M, int N, int G) {
 	dpmatrix mat = malloc(sizeof(struct DPMatrix));
@@ -132,6 +145,15 @@ dpmatrix new_dpmatrix(const gkn_fasta ffa, const gkn_fasta ffb, int M, int N, in
 	
 	mat->max = max_score;
 	
+	//count the the number of max scores
+	int num_max = 0;
+	for (int i = 1; i < mat->len1; i++) {
+		for (int j = 1; j < mat->len2; j++) {
+			if (mat->score[i][j] == mat->max) num_max+=1;
+		}
+	}
+	mat->num_max = num_max;
+	
 	return mat;
 }
 
@@ -160,10 +182,10 @@ void free_dpmatrix(dpmatrix matrix) {
 	}
 }
 
-dpalignment align(dpmatrix mat, int M, int N, int G) {
-	dpalignment al = malloc(sizeof(struct DPAlignment));
-	al->score = mat->max;
+dpalignment *align(dpmatrix mat) {
+	dpalignment *alignments = malloc(mat->num_max*sizeof(struct DPAlignment));
 	//traceback
+	int al_counter = 0;
 	for (int i = 1; i < mat->len1; i++) {
 		for (int j = 1; j < mat->len2; j++) {
 			x = i;
@@ -173,6 +195,8 @@ dpalignment align(dpmatrix mat, int M, int N, int G) {
 				char *s2_aligned = malloc(mat->len1 + mat->len2);
 				char *alignment = malloc(mat->len1 + mat->len2);
 				int counter = 0;
+				int end1 = i;
+				int end2 = j;
 				//printf("(x,y): (%d,%d)", x, y);
 				while (mat->score[x][y]!=0) {
 					if (mat->trace[x][y]=='L') {
@@ -200,24 +224,28 @@ dpalignment align(dpmatrix mat, int M, int N, int G) {
 						y--;
 					}	
 				} 
-				//Print alignments
-				for (int k = counter-1; k >= 0; k--) printf("%c ", s1_aligned[k]);
-				printf("\n");
-				for (int k = counter-1; k >= 0; k--) printf("%c ", alignment[k]);
-				printf("\n");
-				for (int k = counter-1; k >= 0; k--) printf("%c ", s2_aligned[k]);
-				printf("\n\n");
-
+				printf("%s\n", s1_aligned);
+				printf("%s\n", s2_aligned);
+				dpalignment al = malloc(sizeof(struct DPAlignment));
+				al->score = mat->max;
+				al->beg1 = x+1;
+				al->beg2 = y+1;
+				al->end1 = end1;
+				al->end2 = end2;
+				al->seq1 = reverse_string(s1_aligned);
+				al->seq2 = reverse_string(s2_aligned);
+				al->anot = reverse_string(alignment);
 				
+				alignments[al_counter] = al;
+				al_counter++;
 				//free memory
-				
 				free(s1_aligned);
 				free(s2_aligned);
 				free(alignment);
 			}
 		}
 	}
-	return al;
+	return alignments;
 }
 
 
@@ -258,6 +286,15 @@ int main(int argc, char **argv) {
 	
 	dpmatrix mat = new_dpmatrix(ffa, ffb, M, N, G);
 	printm(mat);
+	printf("number of max score: %d\n", mat->num_max);
+	dpalignment *alignments = align(mat);
+	for (int i = 0; i < mat->num_max; i++) {
+		printf("%s\n%s\n%s\n", alignments[i]->seq1, alignments[i]->anot, alignments[i]->seq2);
+		printf("beg1: %d, end1: %d\nbeg2: %d, end2: %d\nscore: %d\n", alignments[i]->beg1, alignments[i]->end1, alignments[i]->beg2, alignments[i]->end2, alignments[i]->score);
+		printf("\n");
+	}
+	for (int i = 0; i < mat->num_max; i++) free_dpalignment(alignments[i]);
+	free(alignments);
 	free_dpmatrix(mat);
 	
 	dpmatrix blank_mat = new_blank();
