@@ -1,0 +1,47 @@
+>Feature OL456172.1
+266	13483	CDS
+			gene	1a
+			inference	ab initio prediction:Prodigal:2.6
+			inference	similar to AA sequence:UniProtKB:P0C6U8
+			locus_tag	PROKKA_00001
+			product	Replicase polyprotein 1a
+13768	21555	CDS
+			gene	rep
+			inference	ab initio prediction:Prodigal:2.6
+			inference	similar to AA sequence:UniProtKB:P0C6X7
+			locus_tag	PROKKA_00002
+			product	Replicase polyprotein 1ab
+21563	25375	CDS
+			gene	S
+			inference	ab initio prediction:Prodigal:2.6
+			inference	similar to AA sequence:UniProtKB:P59594
+			locus_tag	PROKKA_00003
+			product	Spike glycoprotein precursor
+25384	26211	CDS
+			inference	ab initio prediction:Prodigal:2.6
+			locus_tag	PROKKA_00004
+			product	hypothetical protein
+26514	27182	CDS
+			gene	M
+			inference	ab initio prediction:Prodigal:2.6
+			inference	similar to AA sequence:UniProtKB:P59596
+			locus_tag	PROKKA_00005
+			product	Membrane protein
+27193	27378	CDS
+			inference	ab initio prediction:Prodigal:2.6
+			locus_tag	PROKKA_00006
+			product	hypothetical protein
+27385	27750	CDS
+			inference	ab initio prediction:Prodigal:2.6
+			locus_tag	PROKKA_00007
+			product	hypothetical protein
+27885	28244	CDS
+			inference	ab initio prediction:Prodigal:2.6
+			locus_tag	PROKKA_00008
+			product	hypothetical protein
+28258	29517	CDS
+			gene	N
+			inference	ab initio prediction:Prodigal:2.6
+			inference	similar to AA sequence:UniProtKB:P59595
+			locus_tag	PROKKA_00009
+			product	Nucleoprotein

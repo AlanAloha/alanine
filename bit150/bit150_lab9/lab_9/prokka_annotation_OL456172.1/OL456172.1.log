@@ -1,0 +1,81 @@
+[17:21:05] This is prokka 1.12-beta
+[17:21:05] Written by Torsten Seemann <torsten.seemann@gmail.com>
+[17:21:05] Homepage is https://github.com/tseemann/prokka
+[17:21:05] Local time is Wed Dec  1 17:21:05 2021
+[17:21:05] You are bit150-30
+[17:21:05] Operating system is linux
+[17:21:05] You have BioPerl 1.007002
+[17:21:05] System has 80 cores.
+[17:21:05] Will use maximum of 2 cores.
+[17:21:05] Annotating as >>> Viruses <<<
+[17:21:05] Creating new output folder: prokka_annotation_OL456172.1
+[17:21:05] Running: mkdir -p prokka_annotation_OL456172\.1
+[17:21:05] Using filename prefix: OL456172.1.XXX
+[17:21:05] Setting HMMER_NCPU=1
+[17:21:05] Writing log to: prokka_annotation_OL456172.1/OL456172.1.log
+[17:21:05] Command: /share/apps/prokka-1.11/bin/prokka --kingdom Viruses --evalue .01 --outdir prokka_annotation_OL456172.1 --prefix OL456172.1 --cpus 2 --force /group/bit150/Lab_9/OL456172.1.fasta
+[17:21:05] Appending to PATH: /share/apps/prokka-1.11/bin/../binaries/linux
+[17:21:05] Appending to PATH: /share/apps/prokka-1.11/bin/../binaries/linux/../common
+[17:21:05] Appending to PATH: /share/apps/prokka-1.11/bin
+[17:21:05] Looking for 'aragorn' - found /share/apps/prokka-1.11/binaries/linux/aragorn
+[17:21:06] Determined aragorn version is 1.2
+[17:21:06] Looking for 'blastp' - found /share/apps/prokka-1.11/binaries/linux/blastp
+[17:21:06] Determined blastp version is 2.2
+[17:21:06] Looking for 'cmpress' - found /share/apps/prokka-1.11/binaries/linux/cmpress
+[17:21:06] Determined cmpress version is 1.1
+[17:21:06] Looking for 'cmscan' - found /share/apps/prokka-1.11/binaries/linux/cmscan
+[17:21:06] Determined cmscan version is 1.1
+[17:21:06] Looking for 'egrep' - found /bin/egrep
+[17:21:06] Looking for 'find' - found /usr/bin/find
+[17:21:06] Looking for 'grep' - found /bin/grep
+[17:21:06] Looking for 'hmmpress' - found /share/apps/prokka-1.11/binaries/linux/hmmpress
+[17:21:06] Determined hmmpress version is 3.1
+[17:21:06] Looking for 'hmmscan' - found /share/apps/prokka-1.11/binaries/linux/hmmscan
+[17:21:06] Determined hmmscan version is 3.1
+[17:21:06] Looking for 'less' - found /usr/bin/less
+[17:21:06] Looking for 'makeblastdb' - found /share/apps/prokka-1.11/binaries/linux/makeblastdb
+[17:21:06] Determined makeblastdb version is 2.2
+[17:21:06] Looking for 'minced' - found /share/apps/prokka-1.11/bin/../binaries/linux/../common/minced
+[17:21:07] Determined minced version is 1.6
+[17:21:07] Looking for 'parallel' - found /usr/bin/parallel
+[17:21:08] Determined parallel version is 20161222
+[17:21:08] Looking for 'prodigal' - found /share/apps/prokka-1.11/binaries/linux/prodigal
+[17:21:08] Determined prodigal version is 2.6
+[17:21:08] Looking for 'prokka-genbank_to_fasta_db' - found /share/apps/prokka-1.11/bin/prokka-genbank_to_fasta_db
+[17:21:08] Looking for 'sed' - found /bin/sed
+[17:21:08] Looking for 'tbl2asn' - found /share/apps/prokka-1.11/binaries/linux/tbl2asn
+[17:21:08] Determined tbl2asn version is 24.3
+[17:21:08] Using genetic code table 1.
+[17:21:08] Loading and checking input file: /group/bit150/Lab_9/OL456172.1.fasta
+[17:21:08] Wrote 1 contigs totalling 29887 bp.
+[17:21:08] Predicting tRNAs and tmRNAs
+[17:21:08] Running: aragorn -l -gc1  -w prokka_annotation_OL456172\.1\/OL456172\.1\.fna
+[17:21:08] Found 0 tRNAs
+[17:21:08] Disabling rRNA search: --kingdom=Viruses or --norrna=0
+[17:21:08] Skipping ncRNA search, enable with --rfam if desired.
+[17:21:08] Total of 0 tRNA + rRNA features
+[17:21:08] Searching for CRISPR repeats
+[17:21:08] Found 0 CRISPRs
+[17:21:08] Predicting coding sequences
+[17:21:08] Contigs total 29887 bp, so using meta mode
+[17:21:08] Running: prodigal -i prokka_annotation_OL456172\.1\/OL456172\.1\.fna -c -m -g 1 -p meta -f sco -q
+[17:21:08] Found 9 CDS
+[17:21:08] Connecting features back to sequences
+[17:21:08] Not using genus-specific database. Try --usegenus to enable it.
+[17:21:08] Annotating CDS, please be patient.
+[17:21:08] Will use 2 CPUs for similarity searching.
+[17:21:08] There are still 9 unannotated CDS left (started with 9)
+[17:21:08] Will use blast to search against /share/apps/prokka-1.11/bin/../db/kingdom/Viruses/sprot with 2 CPUs
+[17:21:08] Running: cat prokka_annotation_OL456172\.1\/sprot\.faa | parallel --gnu --plain -j 2 --block 2380 --recstart '>' --pipe blastp -query - -db /share/apps/prokka-1.11/bin/../db/kingdom/Viruses/sprot -evalue .01 -num_threads 1 -num_descriptions 1 -num_alignments 1 -seg no > prokka_annotation_OL456172\.1\/sprot\.blast 2> /dev/null
+[17:21:09] Deleting unwanted file: prokka_annotation_OL456172.1/sprot.faa
+[17:21:09] Deleting unwanted file: prokka_annotation_OL456172.1/sprot.blast
+[17:21:09] Labelling remaining 4 proteins as 'hypothetical protein'
+[17:21:09] Found 5 unique /gene codes.
+[17:21:09] Fixed 0 colliding /gene names.
+[17:21:09] Adding /locus_tag identifiers
+[17:21:09] Assigned 9 locus_tags to CDS and RNA features.
+[17:21:09] Writing outputs to prokka_annotation_OL456172.1/
+[17:21:09] Generating annotation statistics file
+[17:21:09] Generating Genbank and Sequin files
+[17:21:09] Running: tbl2asn -V b -a r10k -l paired-ends -M n -N 1 -y 'Annotated using prokka 1.12-beta from https://github.com/tseemann/prokka' -Z prokka_annotation_OL456172\.1\/OL456172\.1\.err -i prokka_annotation_OL456172\.1\/OL456172\.1\.fsa 2> /dev/null
+[17:21:10] Could not run command: tbl2asn -V b -a r10k -l paired-ends -M n -N 1 -y 'Annotated using prokka 1.12-beta from https://github.com/tseemann/prokka' -Z prokka_annotation_OL456172\.1\/OL456172\.1\.err -i prokka_annotation_OL456172\.1\/OL456172\.1\.fsa 2> /dev/null

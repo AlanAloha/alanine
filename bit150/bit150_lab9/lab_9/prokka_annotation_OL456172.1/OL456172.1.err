@@ -1,0 +1,102 @@
+Discrepancy Report Results
+
+Summary
+FATAL: MISSING_PROTEIN_ID:9 proteins have invalid IDs.
+DISC_SOURCE_QUALS_ASNDISC:strain (all present, all unique)
+DISC_SOURCE_QUALS_ASNDISC:taxname (all present, all unique)
+DISC_FEATURE_COUNT:CDS: 9 present
+DISC_COUNT_NUCLEOTIDES:1 nucleotide Bioseqs are present
+FEATURE_LOCATION_CONFLICT:9 features have inconsistent gene locations.
+DISC_QUALITY_SCORES:Quality scores are missing on all sequences.
+ONCALLER_COMMENT_PRESENT:1 comment descriptors were found (all same)
+MISSING_GENOMEASSEMBLY_COMMENTS:1 bioseqs are missing GenomeAssembly structured comments
+MOLTYPE_NOT_MRNA:1 molecule types are not set as mRNA.
+TECHNIQUE_NOT_TSA:1 technique are not set as TSA
+MISSING_STRUCTURED_COMMENT:1 sequences do not include structured comments.
+MISSING_PROJECT:10 sequences do not include project.
+DISC_INCONSISTENT_MOLINFO_TECH:Molinfo Technique Report (some missing, all same)
+
+
+Detailed Report
+
+FATAL: DiscRep_ALL:MISSING_PROTEIN_ID::9 proteins have invalid IDs.
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1_1 (length 4405)
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1_2 (length 2595)
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1_3 (length 1270)
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1_4 (length 275)
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1_5 (length 222)
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1_6 (length 61)
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1_7 (length 121)
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1_8 (length 119)
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1_9 (length 419)
+
+DiscRep_ALL:DISC_SOURCE_QUALS_ASNDISC::strain (all present, all unique)
+DiscRep_SUB:DISC_SOURCE_QUALS_ASNDISC::1 sources have unique values for strain
+DiscRep_ALL:DISC_SOURCE_QUALS_ASNDISC::taxname (all present, all unique)
+DiscRep_SUB:DISC_SOURCE_QUALS_ASNDISC::1 sources have unique values for taxname
+DiscRep_ALL:DISC_FEATURE_COUNT::CDS: 9 present
+DiscRep_ALL:DISC_COUNT_NUCLEOTIDES::1 nucleotide Bioseqs are present
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1 (length 29887)
+
+DiscRep_ALL:FEATURE_LOCATION_CONFLICT::9 features have inconsistent gene locations.
+DiscRep_SUB:FEATURE_LOCATION_CONFLICT::Coding region xref gene does not exist
+prokka_annotation_OL456172.1/OL456172.1:CDS	Replicase polyprotein 1a	lcl|OL456172.1:266-13483	PROKKA_00001
+
+DiscRep_SUB:FEATURE_LOCATION_CONFLICT::Coding region xref gene does not exist
+prokka_annotation_OL456172.1/OL456172.1:CDS	Replicase polyprotein 1ab	lcl|OL456172.1:13768-21555	PROKKA_00002
+
+DiscRep_SUB:FEATURE_LOCATION_CONFLICT::Coding region xref gene does not exist
+prokka_annotation_OL456172.1/OL456172.1:CDS	Spike glycoprotein precursor	lcl|OL456172.1:21563-25375	PROKKA_00003
+
+DiscRep_SUB:FEATURE_LOCATION_CONFLICT::Coding region xref gene does not exist
+prokka_annotation_OL456172.1/OL456172.1:CDS	hypothetical protein	lcl|OL456172.1:25384-26211	PROKKA_00004
+
+DiscRep_SUB:FEATURE_LOCATION_CONFLICT::Coding region xref gene does not exist
+prokka_annotation_OL456172.1/OL456172.1:CDS	Membrane protein	lcl|OL456172.1:26514-27182	PROKKA_00005
+
+DiscRep_SUB:FEATURE_LOCATION_CONFLICT::Coding region xref gene does not exist
+prokka_annotation_OL456172.1/OL456172.1:CDS	hypothetical protein	lcl|OL456172.1:27193-27378	PROKKA_00006
+
+DiscRep_SUB:FEATURE_LOCATION_CONFLICT::Coding region xref gene does not exist
+prokka_annotation_OL456172.1/OL456172.1:CDS	hypothetical protein	lcl|OL456172.1:27385-27750	PROKKA_00007
+
+DiscRep_SUB:FEATURE_LOCATION_CONFLICT::Coding region xref gene does not exist
+prokka_annotation_OL456172.1/OL456172.1:CDS	hypothetical protein	lcl|OL456172.1:27885-28244	PROKKA_00008
+
+DiscRep_SUB:FEATURE_LOCATION_CONFLICT::Coding region xref gene does not exist
+prokka_annotation_OL456172.1/OL456172.1:CDS	Nucleoprotein	lcl|OL456172.1:28258-29517	PROKKA_00009
+
+DiscRep_ALL:DISC_QUALITY_SCORES::Quality scores are missing on all sequences.
+
+DiscRep_ALL:ONCALLER_COMMENT_PRESENT::1 comment descriptors were found (all same)
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1:Annotated using prokka 1.12-beta from https://github.com/tseemann/prokka
+
+DiscRep_ALL:MISSING_GENOMEASSEMBLY_COMMENTS::1 bioseqs are missing GenomeAssembly structured comments
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1 (length 29887)
+
+DiscRep_ALL:MOLTYPE_NOT_MRNA::1 molecule types are not set as mRNA.
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1 (length 29887)
+
+DiscRep_ALL:TECHNIQUE_NOT_TSA::1 technique are not set as TSA
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1 (length 29887)
+
+DiscRep_ALL:MISSING_STRUCTURED_COMMENT::1 sequences do not include structured comments.
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1 (length 29887)
+
+DiscRep_ALL:MISSING_PROJECT::10 sequences do not include project.
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1 (length 29887)
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1_1 (length 4405)
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1_2 (length 2595)
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1_3 (length 1270)
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1_4 (length 275)
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1_5 (length 222)
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1_6 (length 61)
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1_7 (length 121)
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1_8 (length 119)
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1_9 (length 419)
+
+DiscRep_ALL:DISC_INCONSISTENT_MOLINFO_TECH::Molinfo Technique Report (some missing, all same)
+DiscRep_SUB:DISC_INCONSISTENT_MOLINFO_TECH::technique (all missing)
+DiscRep_SUB:DISC_INCONSISTENT_MOLINFO_TECH::1 Molinfos are missing field technique
+prokka_annotation_OL456172.1/OL456172.1:OL456172.1 (length 29887)
+
